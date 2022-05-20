@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Document</h1>
+
+    <script>
+        function handleInput() {
+            let myinput = document.getElementById('myInput').value;
+            alert('Girdi: ' + myinput)
+        }
+
+        function onAdd() {
+            let left = parseInt(document.getElementById('left').value);
+            let right = parseInt(document.getElementById('right').value);
+            let sum = left + right
+            //document.getElementById('sum').value = sum;
+            document.getElementById('sum').innerHTML = sum;
+        }
+    </script>
+
+    <form action="#" method="post">
+        Girdi: 
+        <input type="text" id="myInput" name="myInput">
+        <input type="button" value="Yap" onclick="handleInput()">
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <form action="#" method="post">
+        Sol: 
+        <input type="number" id="left">
+        Sağ: 
+        <input type="number" id="right">
+        <br>
+        <br>
+        <input type="button" value="Topla" onclick="onAdd()">
+    </form>
+
+    <br>
+    <br>
+
+    <!--
+    Toplam:
+    <input type="number" id="sum" disabled="disabled">
+    -->
+    Toplam:
+    <span id="sum"></span>
+    
+</body>
+</html>
