@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+
+    <script>
+
+        function handleLoad() {
+            alert('sayfa yüklendi...');
+        }
+
+        function handleUnLoad() {
+            alert('sayfa yüklenemedi!!!');
+        }
+
+        function handleButton() {
+            alert('butona bastınız :)');
+        }
+
+        function handleLink() {
+            alert('linke tıkladınız..');
+        }
+
+        function handleFocus() {
+            console.log('girdi odaklandı...')
+        }
+
+        function handleChange(myValue) {
+            console.log('değer değişti! ' + myValue)
+        }
+
+        function handleMouseOver() {
+            alert('bölgeye girdiniz.');
+        }
+
+        function handleMouseOut() {
+            alert('bölgeden çıktınız.');
+        }
+
+
+    </script>
+</head>
+<body onload="handleLoad()" onunload="handleUnLoad()">
+    <h1>Event</h1>
+
+    <br>
+    <br>
+
+    <button onclick="handleButton()">Buton</button>
+
+    <br>
+    <br>
+
+    <a href="#" onclick="handleLink()">Link</a>
+
+    <br>
+    <br>
+
+    <input type="text" onfocus="handleFocus()">
+
+    <br>
+    <br>
+
+    <input type="text" onchange="handleChange(this.value)">
+
+    <br>
+    <br>
+
+    <div style="background-color: lightgray;" 
+        onmouseover="handleMouseOver()"
+        onmouseout="handleMouseOut()">
+        burası fareye duyarlı bölge. burası fareye duyarlı bölge. burası fareye duyarlı bölge.
+        burası fareye duyarlı bölge. burası fareye duyarlı bölge. burası fareye duyarlı bölge.
+        burası fareye duyarlı bölge. burası fareye duyarlı bölge. burası fareye duyarlı bölge.
+        burası fareye duyarlı bölge. 
+    </div>
+
+
+</body>
+</html>

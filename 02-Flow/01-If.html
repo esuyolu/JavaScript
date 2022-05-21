@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Statement</title>
+
+    <script>
+
+        /*
+        let input = prompt('bir sayı giriniz', '0');
+        let number = parseInt(input);
+        ++number;
+        alert('sayı : ' + number);
+
+        if (number > 0) {
+            alert('bu bir pozitif sayıdır');
+        } else {
+            alert('bu bir pozitif sayı değildir')
+        }
+        */
+
+        function handleInput() {
+            let input = parseInt(document.getElementById('myInput').value);
+
+            if (input > 0) {
+                document.getElementById('result').innerHTML = input + ' bir pozitif sayıdır';
+            } else if (input < 0) {
+                document.getElementById('result').innerHTML = input + ' bir negatif sayıdır';
+            } else if (input == 0) {
+                document.getElementById('result').innerHTML = input + ' bir nötr sayıdır';
+            } else {
+                document.getElementById('result').innerHTML = input + ' bir sayı değildir';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>If Statement</h1>
+
+    Girdi:
+    <form action="#" method="post">
+        <input type="text" id="myInput">
+        <input type="button" value="Göster" onclick="handleInput()">
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <span id="result"></span>
+</body>
+
+</html>

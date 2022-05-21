@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+
+    <script>
+        function add(left, right) {
+            return left + right;
+        }
+
+        function handleAdd() {
+            let left = parseInt(document.getElementById('left').value);
+            let rigth = parseInt(document.getElementById('right').value);
+            document.getElementById('sum').innerHTML = add(left, rigth);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Function</h1>
+
+    <form action="#" method="post">
+        Sol: 
+        <input type="number" id="left">
+        Sağ: 
+        <input type="number" id="right">
+        <br>
+        <br>
+        <input type="button" value="Topla" onclick="handleAdd()">
+        <br>
+        <br>
+        Toplam:
+        <span id="sum"></span>
+    </form>
+
+</body>
+</html>
