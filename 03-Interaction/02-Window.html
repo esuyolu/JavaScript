@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window</title>
+
+    <script>
+        console.log('Gözatıcı Adı: ' + navigator.appName);
+        console.log('Gözatıcı Sürümü: ' + navigator.appVersion);
+
+        function openPopup() {
+            window.open('https://www.youtube.com/');
+        }
+
+        function createDocument() {
+            let popup = window.open('', 
+                '_blank', 
+                'left=100, top=100, width=800, height=600, scrollbars=auto');
+            popup.document.writeln('canlı içerik');
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1>Window</h1>
+
+    <a href="#" onclick="openPopup()">Git</a>
+    <br>
+    <br>
+    <a href="#" onclick="createDocument()">Oluştur</a>
+</body>
+</html>
