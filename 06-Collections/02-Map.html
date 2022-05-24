@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+
+    <script>
+
+        const countries = new Map();
+        countries.set('TR', 'Türkiye');
+        countries.set('RU', 'Rusya');
+        countries.set('AZ', 'Azerbeycan');
+        countries.set('TM', 'Türkmenistan');
+        countries.set('UZ', 'Özbekistan');
+        countries.set('KG', 'Kırgızistan');
+        countries.set('KZ', 'Kazakistan');
+        countries.set('TR', 'Türkiye');
+        countries.set('AZ', 'Azerbeycan');
+
+        console.log('eleman sayısı: ', countries.size)
+
+        countries.delete('RU');
+
+        const found = countries.get('UZ');
+        console.log('UZ : ', found);
+
+        if (countries.has('TM')) {
+            console.log('Türkmenistan var.')
+        }
+
+        console.log('eleman sayısı: ', countries.size)
+
+        console.log('---------------sadece anahtar---------------');
+
+        for (code of countries.keys()) {
+            console.log('anahtar: ', code);
+        }
+
+        console.log('---------------hem anahtar hem değer---------------');
+
+        for (code of countries.keys()) {
+            const country = countries.get(code);
+            console.log('anahtar: ', code, ' değer: ', country);
+        }
+
+        console.log('---------------sadece değer---------------');
+
+        for (country of countries.values()) {
+            console.log('değer: ', country);
+        }
+
+        console.log('---------------hem anahtar hem değer---------------');
+
+        for ([code, country] of countries.entries()) {
+            console.log('anahtar: ', code, ' değer: ', country);
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1>Map</h1>
+</body>
+</html>

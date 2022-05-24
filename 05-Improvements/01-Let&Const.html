@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let & Const</title>
+
+    <script>
+        if (true) {
+            var x = 3;
+            console.log('içerde x: ' + x);
+            
+            let y = 3;
+            console.log('içerde y: ' + y);
+        }
+        console.log('dışarda x: ' + x);
+        //console.log('dışarıda y: ' + y);
+
+        const z = 3;
+        console.log('değişmez z: ' + z);
+        z = 4;
+        console.log('değişmez z: ' + z);
+    </script>
+
+</head>
+<body>
+    <h1>Let & Const</h1>
+</body>
+</html>

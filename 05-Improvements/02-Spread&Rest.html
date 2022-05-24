@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread & Rest</title>
+
+    <script>
+        const arrayA = ['iki', 'üç', 'dört'];
+        const arrayB = ['bir', ...arrayA, 'beş'];
+        let output = '';
+
+        console.log('arrayB dizisinin uzunluğu: ' + arrayB.length);
+
+        for (let i = 0; i < arrayB.length; ++i) {
+            output += arrayB[i] + ' ';
+        }
+
+        console.log('çıktı: ' + output)
+
+        function myFunction(x, y, ...others) {
+            let output = x + ' ' + y + ' ';
+
+            for (let i = 0; i < others.length; ++i) {
+                output += others[i] + ' ';
+            }
+
+            console.log('sonuç: ' + output);
+        }
+
+        /*
+        myFunction(3, 4, []);
+        myFunction(3, 4, [5]);
+        myFunction(3, 4, [5, 6, 7]);
+        */
+
+        myFunction(3, 4);
+        myFunction(3, 4, 5);
+        myFunction(3, 4, 5, 6, 7);
+
+
+    </script>
+
+</head>
+<body>
+    <h1>Spread & Rest</h1>
+</body>
+</html>
