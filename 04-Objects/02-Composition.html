@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composition</title>
+
+    <script>
+        function Person(firstName='', lastName='') {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.fullName = function() {
+                return this.firstName + ' ' + this.lastName;
+            };
+        }
+
+        function Order(person, salesPrice, salesQuantity) {
+            this.person = person;
+            this.salesPrice = salesPrice;
+            this.salesQuantity = salesQuantity;
+            
+            this.totalAmount = function() {
+                return this.salesPrice * this.salesQuantity;
+            };
+
+            this.displayText = function() {
+                return 'Müşteri Adı-Soyadı: ' + this.person.fullName() + ' Toplam Tutar: ' + this.totalAmount();
+            };
+        }
+
+        let person = new Person('Esma', 'Suyolu');
+        let order = new Order(person, 1200, 3);
+
+        console.log('Müşteri Adı-Soyadı: ' + order.person.fullName())
+        console.log('Toplam Tutar: ' + order.totalAmount());
+        console.log(order.displayText());
+        
+    </script>
+</head>
+<body>
+    <h1>Composition</h1>
+</body>
+</html>

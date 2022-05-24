@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+
+    <script>
+        function Product(id, name, price) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+        }
+
+        Product.prototype.taxRate = 18; // burada varsayılan değer vermiş olduk.
+        Product.prototype.getPricePlusTax = function() {
+            return this.price * (1 + this.taxRate / 100);
+        };
+
+        let product = new Product(301, 'Cep Telefonu', 1300);
+        product.taxRate = 8;
+        console.log(product.id + ' ' + product.name + ' ' + product.price);
+        console.log(product.id + ' ' + product.name + ' ' + product.price + ' ' + product.taxRate);
+        console.log('Vergi İçinde Datış Ederi: ' + product.getPricePlusTax());
+    </script>
+</head>
+<body>
+    <h1>Prototype</h1>
+</body>
+</html>

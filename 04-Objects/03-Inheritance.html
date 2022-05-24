@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+
+    <script>
+        function Person(firstName='', lastName='') {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.fullName = function() {
+                return this.firstName + ' ' + this.lastName;
+            };
+        }
+
+        function Customer(firstName, lastName, totalDemit) {
+            this.base = Person;
+            this.base(firstName, lastName)
+            this.totalDemit = totalDemit;
+
+            this.displayText = function() {
+                return 'Müşteri Adı-Soyadı: ' + this.fullName() + ' Toplam Borç: ' + this.totalDemit;
+            };
+        }
+
+        let customer = new Customer('Esma', 'Suyolu', 1200); // Customer is a Person 
+        console.log(customer.displayText());
+        
+    </script>
+</head>
+<body>
+    <h1>Inheritance</h1>
+</body>
+</html>
