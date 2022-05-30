@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+    <script>
+
+        class Person {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            getFullName() {
+                return this.firstName + ' ' + this.lastName;
+            }
+
+            toString() {
+                return this.getFullName();
+            }
+        }
+
+        class Customer extends Person {
+            constructor(customerId, firstName, lastName) {
+                super(firstName, lastName);
+                this.customerId = customerId;
+            }
+
+            toString() {
+                return this.customerId + ' ' + super.toString();
+            }
+        }
+
+        let customer = new Customer(101, 'Esma', 'Suyolu');
+        console.log('Özdeşlik: ' + customer.customerId);
+        console.log('Ad: ' + customer.firstName);
+        console.log('Soyad: ' + customer.lastName);
+        console.log('Ad-Soyad: ' + customer.getFullName());
+        console.log('Müşteri: ' + customer);
+    </script>
+</head>
+<body>
+    <h1>Inheritance</h1>
+</body>
+</html>

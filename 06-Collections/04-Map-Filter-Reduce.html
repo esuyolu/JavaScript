@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map-Filter-Reduce</title>
+
+    <script>
+
+        const subjects = ['HTML', 'CSS', 'JavaScript', 'SQL', 'XML', 
+        'JSON', 'C++', 'Java', 'C#', 'PHP', 'Python', 'Ruby'];
+
+        const counts = [];
+
+        for (subject of subjects) {
+            if (subject.length <= 3) {
+                counts.push(subject);
+            }
+        }
+
+        console.log(counts);
+
+        const lengthsOfSubjects = subjects.map(s => s.length);
+        console.log(lengthsOfSubjects);
+
+        const subSubjects = lengthsOfSubjects.filter(c => c <= 3)
+        console.log(subSubjects);
+
+        const sumLengthOfsubSubjects = subSubjects.reduce((sum, i) => sum + i);
+        console.log(sumLengthOfsubSubjects);
+
+        const result = subjects.map(s => s.length)
+                                .filter(c => c <= 3)
+                                .reduce((sum, i) => sum + i);
+        console.log('sonuç: ' + result);
+    </script>
+</head>
+<body>
+    <h1>Map-Filter-Reduce</h1>
+</body>
+</html>

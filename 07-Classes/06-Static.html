@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static</title>
+
+    <script>
+        
+        class Calculator {
+
+            add(left, right) {
+                return left + right;
+            }
+
+            static subtract(left, right) {
+                return left + right;
+            }
+
+            static PRECISION = 0.001;
+        }
+
+        let calculator= new Calculator();
+        let result = calculator.add(3, 5);
+        console.log(result);
+
+        console.log(Calculator.subtract(1, 5))
+
+        const precision = Calculator.PRECISION;
+        precision = 0.7; // değiştirilemez: Uncaught TypeError: Assignment to constant variable.
+        console.log(precision);
+    </script>
+</head>
+
+<body>
+    <h1>Static</h1>
+</body>
+
+</html>

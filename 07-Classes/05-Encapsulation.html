@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation</title>
+
+    <script>
+        class Rectangle {
+
+            constructor(width = 1, height = 1) {
+                this._width = width;
+                this._height = height;
+            }
+
+            set width(width) {
+                this._width = Math.abs(width);
+            }
+
+            get width() {
+                return this._width;
+            }
+
+            set height(height) {
+                if (height < 0) {
+                    throw new Error('yükseklik negatif olamaz! ' + height);
+                }
+                this._height = height;
+            }
+
+            get height() {
+                return this._height;
+            }
+
+            // getArea() ve getPerimeter() fonksiyonlarındaki this.width => get width() fonksiyonunu,
+            // this.height => get height() fonksiyonunu çağırır.
+            get area() {
+                return this.width * this.height;
+            }
+
+            get perimeter() {
+                return 2 * (this.width + this.height);
+            }
+        }
+
+        let rectangle = new Rectangle(3, 4);
+        rectangle.width = -3;  // set width(width) çağrılıyor
+        rectangle.height = 4;  // set height(height) çağrılıyor
+        console.log('genişlik: ' + rectangle.width + ' yükseklik: ' + rectangle.height); // get width(), get height() çağrılıyor
+        console.log('alan: ' + rectangle.area + ' çevre: ' + rectangle.perimeter); // fonksiyonu property gibi kullanmak
+    </script>
+</head>
+
+<body>
+    <h1>Encapsulation</h1>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Destruction</title>
+
+    <script>
+
+        class Product {
+            constructor(id = 0, name = '', price = 0.0) {
+                this.id = id;
+                this.name = name;
+                this.price = price;
+            }
+        }
+
+        let product = new Product(301, 'Cep Telefonu', 1350.50);
+        console.log('id: ' + product.id + ' name: ' + product.name + ' price: ' + product.price);
+
+        let {id, name, price} = product;
+        name = 'Dizüstü Bilgisayar';
+        console.log('id: ' + id + ' name: ' + name + ' price: ' + price);
+
+        let {id: productId, name: productName, price: salesPrice} = product;
+        productName = 'Çamaşır Makinesi';
+        console.log('id: ' + productId + ' name: ' + productName + ' price: ' + salesPrice);
+    </script>
+</head>
+
+<body>
+    <h1>Class Destruction</h1>
+</body>
+
+</html>
